@@ -4,7 +4,9 @@
   "description": "> *informações durante aula 06.08 - arquivo para consulta*\r - CRUD = Create, Read, Update, Delete (operações com dados)\r - Banco de dados = conjunto de tabela\r     - cada tabela = uma entendidade, registro de uma entidade\r     - cada linha da tabela (um \"objeto\") tem linhas, e cada linha possui uma chave primária\r         - a chave primária é o que identifica o elemento como único\r - Banco de dados relacional = tabelas que se relacionam (entidades)\r     - chave estrangeira -> eh a chave que vai fazer com que seja possível relacionar duas tabelas\r - ORM = biblioteca que permite escrever em JS em transformar isso em SQL",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "db:push": "drizzle-kit push",
+    "dev": "node ./src/app.js"
   },
   "repository": {
     "type": "git",
@@ -23,5 +25,8 @@
     "dotenv": "^17.4.2",
     "drizzle-orm": "^0.45.2",
     "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "drizzle-kit": "^0.31.10"
   }
 }

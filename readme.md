@@ -28,4 +28,5 @@ NEON - por meio do Drizzle -> *Neon é um serviço de armazenamento online*
 - `.env` = arquivo que guarda as variáveis do sistema
 - `drizzle.config.js` = configura as principais funcionalidades envolvidas com o "dotenv" e retorna um obj
 - `src/db/schema` = onde a tabela é escrita
+- `index.js` = pega schema e configuracoes e cria uma instancia do banco de dados. o drizzle usa essa instancia p copiar ela no banco de dados real
     
