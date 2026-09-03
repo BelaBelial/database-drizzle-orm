@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "db:push": "drizzle-kit push",
+    "db:push": "npx drizzle-kit push",
     "dev": "node ./src/app.js"
   },
   "repository": {
@@ -22,6 +22,7 @@
   "homepage": "https://github.com/BelaBelial/database-drizzle-orm#readme",
   "dependencies": {
     "@neondatabase/serverless": "^1.1.0",
+    "bcryptjs": "^3.0.3",
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "drizzle-orm": "^0.45.2",

@@ -12,6 +12,7 @@ import { helmetMiddleWare } from './config/helmet.js'
 
 const server = express();
 
+//deve vir no topo da pilhar -> tudo tem que estar configurado e seguro para funcionar ent deve estar no topo
 server.use(helmetMiddleWare);
 
 server.use(cors(corsOptions)); //middle ware de seguranca
@@ -48,6 +49,27 @@ server.post('/pacientes', async (req, res) => {
     }
     await db.insert(pacientes).values(novo_paciente)
     res.status(201).json(novo_paciente)
+})
+
+server.post('/uruarios', async (req, res) => {
+    try {
+        const {nome, email, senha} = req.body;
+        if(!nome || !email || !senha){
+            return res.status(400).json("Eh preciso do nome, email e senha para cadastrar um user.");
+        }
+        const usuariosExistentes = await db.select()
+            .from(usuarios)
+            .where(eq(usuarios.email, email))
+        if(usuariosExistentes > 0){
+            return res.status(400).json("Email ja cadastrado");
+        }
+
+        const seltRounds = 10;
+        const senhaHash = await bcrypt.hash(senha, saltRounds);
+    }
+    catch(erro){
+
+    }
 })
 
 server.listen(3030, () => {console.log("running...")});

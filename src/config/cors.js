@@ -1,6 +1,8 @@
 //controla os enderecos que tem acesso ao servidor e podem fazer requisições/modificacoes
 //CORS = protocol que informa ao browser quem eh autorizado a enviar o recurso, por quais metodos, e usando quais cabecalhos
 
+//middle wares de seguranca devem vir no topo da pilha
+
 //vetor de string bellow
 const origensPermitidas = [
     'http://localhost:5173',
